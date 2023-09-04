@@ -48,23 +48,23 @@
             </style>
         <title>Self-Reg testing page</title>
         <script>
-            function gettRegistrationFinishedMessageHandler() { 
-                if (isAndroid()) {
-                    window.WebViewJSBridge.onRegistrationFinished();
-                } else {
-                    window.webkit.messageHandlers.gettRegistrationFinishedMessageHandler.postMessage(
-                        {
-                            "status": "success"
-                        }
-                        );
-                    }
+                function gettRegistrationFinishedMessageHandler() { 
+                    if (isAndroid()) {
+                        window.WebViewJSBridge.onRegistrationFinished();
+                    } else {
+                        window.webkit.messageHandlers.gettRegistrationFinishedMessageHandler.postMessage(
+                            {
+                                "status": "success"
+                            }
+                            );
+                     }
                 }
 
-                function onCCCSuccessfullyAdded() {
+                function cccSuccessfullyAdded() {
                     if (isAndroid()) {
-                        window.WebViewJSBridge.onCCCSuccessfullyCreated();
+                        window.WebViewJSBridge.cccSuccessfullyAdded();
                     } else {
-                        window.webkit.messageHandlers.onCCCSuccessfullyCreated.postMessage('card successfully Added! close the webview');
+                        window.webkit.messageHandlers.cccSuccessfullyAdded.postMessage('card successfully Added! close the webview');
                     }
                 }
                 
@@ -159,7 +159,7 @@
         </p>
         <div>
             <button class="button-37" onclick="gettRegistrationFinishedMessageHandler()">Legacy completion</button><br>
-            <button class="button-37" onclick="onCCCSuccessfullyAdded()">CCC successfully Added</button><br>
+            <button class="button-37" onclick="cccSuccessfullyAdded()">CCC successfully Added</button><br>
             <button class="button-37" onclick="onCompanyCreatedSuccessfully()">Company created</button><br>
             <button class="button-37" onclick="onCompanyCreatedFailure()">Company creation failed</button><br>
             <button class="button-37" onclick="onSkipAddCreditCard()">Skip Credit Card</button><br>
