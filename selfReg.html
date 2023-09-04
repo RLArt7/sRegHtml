@@ -60,11 +60,11 @@
                      }
                 }
 
-                function cccSuccessfullyAdded() {
+                function onCCCSuccessfullyAdded() {
                     if (isAndroid()) {
-                        window.WebViewJSBridge.cccSuccessfullyAdded();
+                        window.WebViewJSBridge.onCCCSuccessfullyAdded();
                     } else {
-                        window.webkit.messageHandlers.cccSuccessfullyAdded.postMessage('card successfully Added! close the webview');
+                        window.webkit.messageHandlers.onCCCSuccessfullyAdded.postMessage('card successfully Added! close the webview');
                     }
                 }
                 
@@ -159,7 +159,7 @@
         </p>
         <div>
             <button class="button-37" onclick="gettRegistrationFinishedMessageHandler()">Legacy completion</button><br>
-            <button class="button-37" onclick="cccSuccessfullyAdded()">CCC successfully Added</button><br>
+            <button class="button-37" onclick="onCCCSuccessfullyAdded()">CCC successfully Added</button><br>
             <button class="button-37" onclick="onCompanyCreatedSuccessfully()">Company created</button><br>
             <button class="button-37" onclick="onCompanyCreatedFailure()">Company creation failed</button><br>
             <button class="button-37" onclick="onSkipAddCreditCard()">Skip Credit Card</button><br>
